@@ -11,9 +11,37 @@
 <body>
   <div class="h-app">
     <a href="./" class="u-url p-name">
-      misskey oauth2 client example
+      oauth2 client example
     </a>
   </div>
+
+  <form action="https://misskey.systems/oauth/authorize" style="display: flex; flex-direction: column;">
+    <label>
+      client_id
+      <input name="client_id" value="https://ikasoba.github.io/misskey-oauth2-client-example" />
+    </label>
+    <label>
+      redirect_uri
+      <input name="redirect_uri" value="https://ikasoba.github.io/misskey-oauth2-client-example/redirect" />
+    </label>
+    <label>
+      response_type
+      <input name="response_type" value="code" />
+    </label>
+    <label>
+      scope
+      <input name="scope" value="read:account" />
+    </label>
+    <label>
+      code_challenge_method
+      <input name="code_challenge_method" value="S256" />
+    </label>
+    <label>
+      code_challenge
+      <input name="code_challenge" value="Y29kZQ" />
+    </label>
+    <button>送信</button>
+  </form>
 </body>
 
 </html>
