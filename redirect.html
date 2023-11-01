@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const h = (name, attr, ...children) => {
+      /** @type {HTMLElement} */
+      const e = document.createElement(name);
+
+      for (const k in attr) {
+        e.setAttribute(k, attr[k]);
+      }
+
+      e.append(...children);
+
+      return e;
+    }
+
+    const search = new URLSearchParams(location.search);
+
+    const tbody = h("tbody")
+
+    for (const [k, v] of search) {
+      tbody.append(
+        h("tr", null,
+          h("td", null,
+            k),
+          h("td", null,
+            v))
+      );
+    }
+
+    document.body.append(h("table", { border: "1" }, tbody));
+  </script>
+</body>
+
+</html>
